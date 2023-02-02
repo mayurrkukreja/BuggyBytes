@@ -47,10 +47,8 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  # flutter_lints: ^2.0.0
-<<<<<<< HEAD
+  # flutter_lints: ^2.0.0 
   flutter_svg: ^0.22.0
-=======
   flutter_animated_dialog: ^2.0.1
   # image_picker: ^0.8.4+4
   sms_autofill: ^2.2.0
@@ -64,7 +62,6 @@ dev_dependencies:
   # flutter_image_compre: ^1.1.1
   mongo_dart: ^0.7.4+1
   # camera: ^0.10.0+3
->>>>>>> f84a9ee5f3b2763c1875f10d1aa66e3fcd7b2da7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
