@@ -1,23 +1,20 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+
+import 'package:rentmate/authentication/login.dart';
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(Object context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            backgroundColor: Color(0xFFF5F6F6),
-            primaryColor: Color(0xFF000000),
-            accentColor: Color(0xFFFA5019),
-            textTheme: TextTheme(
-              headline1: TextStyle(
-                color: Color(0xFF100E34),
-              ),
-              bodyText1: TextStyle(color: Color(0xFF100E34).withOpacity(0.5)),
-            )),
-        home: HomePage());
+      debugShowCheckedModeBanner: false,
+      home: LoginScreen(),
+    );
   }
 }
