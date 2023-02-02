@@ -1,4 +1,4 @@
-# rentmate
+# RentMate
 
 A new Flutter project.
 
