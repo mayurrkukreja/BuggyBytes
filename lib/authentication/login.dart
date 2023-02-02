@@ -105,21 +105,21 @@ Youtube: Programming with Flexz
                                       curve: Curves.easeInOutQuad,
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
-                                        child: Container(
-                                          width: 60,
-                                          height: 60,
-                                          color: Colors.red[400],
-                                          child: i == 0
-                                              ? Image(
-                                                  image: NetworkImage(
-                                                      "https://avatars.githubusercontent.com/u/67867070?v=4"),
-                                                )
-                                              : Icon(
-                                                  Icons.account_circle_outlined,
-                                                  color: Colors.white,
-                                                  size: 40,
-                                                ),
-                                        ),
+                                        // child: Container(
+                                        //   width: 60,
+                                        //   height: 60,
+                                        //   color: Colors.red[400],
+                                        //   child: i == 0
+                                        //       ? Image(
+                                        //           image: NetworkImage(
+                                        //               "https://avatars.githubusercontent.com/u/67867070?v=4"),
+                                        //         )
+                                        //       : Icon(
+                                        //           Icons.account_circle_outlined,
+                                        //           color: Colors.white,
+                                        //           size: 40,
+                                        //         ),
+                                        // ),
                                       ),
                                     ),
                                   ]),
@@ -140,18 +140,18 @@ Youtube: Programming with Flexz
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text("Welcome Back,",
+                                      Text("Welcome Back!",
                                           style: TextStyle(
                                             fontSize: 40,
-                                            fontWeight: FontWeight.w300,
+                                            fontWeight: FontWeight.w400,
                                           )),
-                                      Text(
-                                        "Mayur Kukreja",
-                                        style: TextStyle(
-                                          fontSize: 40,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
+                                      // Text(
+                                      //   "Mayur Kukreja",
+                                      //   style: TextStyle(
+                                      //     fontSize: 40,
+                                      //     fontWeight: FontWeight.bold,
+                                      //   ),
+                                      // ),
                                     ],
                                   ),
                                 ),

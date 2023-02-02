@@ -4,11 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rentmate/animations.dart';
 import 'package:rentmate/authentication/login.dart';
+import 'package:rentmate/screens/home_screen.dart';
 
 import '../constant.dart';
 
 class SignUPScreen extends StatefulWidget {
-  SignUPScreen({Key? key}) : super(key: key);
+  // SignUPScreen({Key? key}) : super(key: key);
+  final String? firstName;
+  final String? lastName;
+  final String? city;
+  final String? emailId;
+  SignUPScreen({this.firstName, this.lastName, this.emailId, this.city});
 
   @override
   State<SignUPScreen> createState() => _SignUPScreenState();
@@ -16,7 +22,36 @@ class SignUPScreen extends StatefulWidget {
 
 class _SignUPScreenState extends State<SignUPScreen> {
   final feature = ["Login", "Sign Up"];
+  bool enableBtn = false;
+  bool isAPIcallProcess = false;
+  // String firstName = '';
+  String emailId = '';
+  // String dateOfBirth = '';
+  String firstName = '';
+  String lastName = '';
+  String city = '';
+  // String genderState = '';
+  bool otpSent = false;
+  // late Timer timer;
+  int start = 60;
+  // final _formKey = GlobalKey<FormState>();
+  // FormData _formData = new FormData();
 
+  List<String> gender = ['Male', 'Female', 'Other'];
+  int genderIndex = 1;
+  DateTime currentDate = DateTime.now();
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
+        context: context,
+        initialDate: currentDate,
+        firstDate: DateTime(1990),
+        lastDate: DateTime(2025));
+    if (pickedDate != null && pickedDate != currentDate)
+      setState(() {
+        currentDate = pickedDate;
+      });
+  }
   int i = 1;
 
   @override
@@ -36,11 +71,6 @@ class _SignUPScreenState extends State<SignUPScreen> {
                           margin: EdgeInsets.all(25),
                           child: Column(
                             children: [
-
-
-
-
-
                               // TabBar Code
                               Row(children: [
                                 Container(
@@ -96,10 +126,6 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                 ),
                                 Expanded(child: Container()),
 
-
-
-
-
                                 // Profile
                                 RightAnime(
                                   1,
@@ -107,36 +133,28 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                   curve: Curves.easeInOutQuad,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
-                                    child: Container(
-                                      width: 60,
-                                      height: 60,
-                                      color: Colors.red[400],
-                                      child: i == 0
-                                          ? Image(
-                                              image: NetworkImage(
-                                                  "https://avatars.githubusercontent.com/u/67867070?v=4"),
-                                            )
-                                          : Icon(
-                                              Icons.account_circle_outlined,
-                                              color: Colors.white,
-                                              size: 40,
-                                            ),
-                                    ),
+                                    // child: Container(
+                                    //   width: 60,
+                                    //   height: 60,
+                                    //   color: Colors.red[400],
+                                    //   child: i == 0
+                                    //       ? Image(
+                                    //           image: NetworkImage(
+                                    //               "https://avatars.githubusercontent.com/u/67867070?v=4"),
+                                    //         )
+                                    //       : Icon(
+                                    //           Icons.account_circle_outlined,
+                                    //           color: Colors.white,
+                                    //           size: 40,
+                                    //         ),
+                                    // ),
                                   ),
                                 ),
                               ]),
 
-
-
-
-
                               SizedBox(
                                 height: 30,
                               ),
-
-
-
-
 
                               // Top Text
                               Container(
@@ -152,15 +170,15 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                     children: [
                                       RichText(
                                         text: TextSpan(
-                                          text: "Hello ",
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 40,
-                                            fontWeight: FontWeight.w300,
-                                          ),
+                                          // text: "Hello",
+                                          // style: TextStyle(
+                                          //   color: Colors.black,
+                                          //   fontSize: 40,
+                                          //   fontWeight: FontWeight.w300,
+                                          // ),
                                           children: [
                                             TextSpan(
-                                              text: "Beautiful,",
+                                              text: "Welcome,",
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 40,
@@ -182,17 +200,9 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                 ),
                               ),
 
-
-
-
-
                               SizedBox(
                                 height: height / 18,
                               ),
-
-
-
-
 
                               // TextFiled
                               Container(
@@ -239,16 +249,9 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                                 labelText: "Password again"),
                                       ),
 
-
-
-
-
                                       SizedBox(
                                         height: 5,
                                       ),
-
-
-
 
                                       // FaceBook and Google ICon
                                       TopAnime(
@@ -283,9 +286,6 @@ class _SignUPScreenState extends State<SignUPScreen> {
                           ),
                         ),
 
-
-
-
                         // Bottom
                         i == 1
                             ? TopAnime(
@@ -313,7 +313,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        LoginScreen()));
+                                                        HomeScreen()));
                                           },
                                           child: Container(
                                             decoration: BoxDecoration(
