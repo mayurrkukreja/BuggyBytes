@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final feature = ["Login", "Sign Up"];
 
   int i = 0;
-  
+
 /*
 Instagram: @CodeWithFlexz
 Github: AmirBayat0
@@ -41,108 +41,92 @@ Youtube: Programming with Flexz
                           margin: EdgeInsets.all(25),
                           child: Column(
                             children: [
-
-
-
                               Row(
-                                // TabBar Code
-                                children: [
-                                Container(
-                                  height: height / 19,
-                                  width: width / 2,
-                                  child: TopAnime(
-                                    2,
-                                    5,
-                                    child: ListView.builder(
-                                      itemCount: feature.length,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder:
-                                          (BuildContext context, int index) {
-                                        return GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              i = index;
-                                            });
-                                          },
-                                          child: Column(
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
+                                  // TabBar Code
+                                  children: [
+                                    Container(
+                                      height: height / 19,
+                                      width: width / 2,
+                                      child: TopAnime(
+                                        2,
+                                        5,
+                                        child: ListView.builder(
+                                          itemCount: feature.length,
+                                          scrollDirection: Axis.horizontal,
+                                          itemBuilder: (BuildContext context,
+                                              int index) {
+                                            return GestureDetector(
+                                              onTap: () {
+                                                setState(() {
+                                                  i = index;
+                                                });
+                                              },
+                                              child: Column(
+                                                children: [
+                                                  Padding(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
                                                         horizontal: 20),
-                                                child: Text(
-                                                  feature[index],
-                                                  style: TextStyle(
-                                                    color: i == index
-                                                        ? Colors.black
-                                                        : Colors.grey,
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.bold,
+                                                    child: Text(
+                                                      feature[index],
+                                                      style: TextStyle(
+                                                        color: i == index
+                                                            ? Colors.black
+                                                            : Colors.grey,
+                                                        fontSize: 20,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    ),
                                                   ),
+                                                  SizedBox(
+                                                    height: 8,
+                                                  ),
+                                                  i == index
+                                                      ? Container(
+                                                          height: 3,
+                                                          width: width / 9,
+                                                          color: Colors.black,
+                                                        )
+                                                      : Container(),
+                                                ],
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(child: Container()),
+
+                                    // Profile
+                                    RightAnime(
+                                      1,
+                                      15,
+                                      curve: Curves.easeInOutQuad,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Container(
+                                          width: 60,
+                                          height: 60,
+                                          color: Colors.red[400],
+                                          child: i == 0
+                                              ? Image(
+                                                  image: NetworkImage(
+                                                      "https://avatars.githubusercontent.com/u/67867070?v=4"),
+                                                )
+                                              : Icon(
+                                                  Icons.account_circle_outlined,
+                                                  color: Colors.white,
+                                                  size: 40,
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 8,
-                                              ),
-                                              i == index
-                                                  ? Container(
-                                                      height: 3,
-                                                      width: width / 9,
-                                                      color: Colors.black,
-                                                    )
-                                                  : Container(),
-                                            
-                                            
-                                            ],
-                                          ),
-                                        );
-                                      },
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                                Expanded(child: Container()),
-
-
-
-
-
-
-                                // Profile
-                                RightAnime(
-                                  1,
-                                  15,
-                                  curve: Curves.easeInOutQuad,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Container(
-                                      width: 60,
-                                      height: 60,
-                                      color: Colors.red[400],
-                                      child: i == 0
-                                          ? Image(
-                                              image: NetworkImage(
-                                                  "https://i.pinimg.com/564x/5d/a3/d2/5da3d22d08e353184ca357db7800e9f5.jpg"),
-                                            )
-                                          : Icon(
-                                              Icons.account_circle_outlined,
-                                              color: Colors.white,
-                                              size: 40,
-                                            ),
-                                    ),
-                                  ),
-                                ),
-                              ]),
-
-
-
-
+                                  ]),
 
                               SizedBox(
                                 height: 50,
                               ),
-                              
-
-
 
                               // Top Text
                               Container(
@@ -162,7 +146,7 @@ Youtube: Programming with Flexz
                                             fontWeight: FontWeight.w300,
                                           )),
                                       Text(
-                                        "AmirHossein",
+                                        "Mayur Kukreja",
                                         style: TextStyle(
                                           fontSize: 40,
                                           fontWeight: FontWeight.bold,
@@ -173,14 +157,9 @@ Youtube: Programming with Flexz
                                 ),
                               ),
 
-
-
                               SizedBox(
                                 height: height / 14,
                               ),
-
-
-
 
                               // TextFiled
                               Column(
@@ -223,12 +202,9 @@ Youtube: Programming with Flexz
                                                           labelText:
                                                               "Password")),
 
-
                                           SizedBox(
                                             height: 5,
                                           ),
-
-
 
                                           // FaceBook and Google ICon
                                           TopAnime(
@@ -266,15 +242,7 @@ Youtube: Programming with Flexz
                           ),
                         ),
 
-
-
-
-
-
-
-
-
-                        // Bottom 
+                        // Bottom
                         i == 0
                             ? TopAnime(
                                 2,
