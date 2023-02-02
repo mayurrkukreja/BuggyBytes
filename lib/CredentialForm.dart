@@ -123,7 +123,7 @@ class _HomeState extends State<Home> {
                     });
                   },
                 ),
-              TextField(
+                TextField(
                   controller: dateinput,
                   decoration: InputDecoration(
                       icon: Icon(Icons.calendar_today),
@@ -149,7 +149,7 @@ class _HomeState extends State<Home> {
                       print("Date is not selected");
                     }
                   },
-              ),
+                ),
                 Divider(),
                 TextField(
                     controller: father_name,
