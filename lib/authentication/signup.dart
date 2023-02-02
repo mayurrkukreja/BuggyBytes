@@ -114,7 +114,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                                       child: i == 0
                                           ? Image(
                                               image: NetworkImage(
-                                                  "https://i.pinimg.com/564x/5d/a3/d2/5da3d22d08e353184ca357db7800e9f5.jpg"),
+                                                  "https://avatars.githubusercontent.com/u/67867070?v=4"),
                                             )
                                           : Icon(
                                               Icons.account_circle_outlined,
